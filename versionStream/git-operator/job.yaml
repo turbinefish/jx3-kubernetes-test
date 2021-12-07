@@ -33,6 +33,9 @@ spec:
         volumeMounts:
         - mountPath: /workspace
           name: workspace-volume
+        - mountPath: /etc/localtime
+          name: timezone-volume
+          readOnly: true
         workingDir: /workspace
       containers:
       - args:
