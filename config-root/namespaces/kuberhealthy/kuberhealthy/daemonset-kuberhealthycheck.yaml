@@ -8,6 +8,7 @@ metadata:
     meta.helm.sh/release-name: 'kuberhealthy'
   labels:
     gitops.jenkins-x.io/pipeline: 'namespaces'
+    kuberhealthy-run-id: ''
 spec:
   runInterval: 15m
   timeout: 12m
@@ -23,7 +24,9 @@ spec:
                 fieldPath: metadata.namespace
           - name: CHECK_POD_TIMEOUT
             value: "10m"
-        image: kuberhealthy/daemonset-check:v3.2.5
+          - name: KH_RUN_UUID
+            value: ""
+        image: kuberhealthy/daemonset-check:v3.3.0
         imagePullPolicy: IfNotPresent
         name: main
         resources:
