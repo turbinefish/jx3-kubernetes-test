@@ -67,7 +67,7 @@
 		    </tr>
 	    <tr>
 	      <td><a href='https://kuberhealthy.github.io/kuberhealthy/' title='An operator for synthetic test and monitoring. Works great with Prometheus.'> <img src='https://raw.githubusercontent.com/kuberhealthy/kuberhealthy/master/images/logo-square.png' width='24px' height='24px'> kuberhealthy </a></td>
-	      <td>77</td>
+	      <td>69</td>
 	      <td></td>
 	      <td><a href='https://kuberhealthy.github.io/kuberhealthy/'>source</a></td>
 	    </tr>

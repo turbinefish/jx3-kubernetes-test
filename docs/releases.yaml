@@ -113,9 +113,9 @@
   path: helmfiles/kuberhealthy/helmfile.yaml
   releases:
   - apiVersion: v2
-    appVersion: v2.7.0
+    appVersion: v2.5.0
     description: An operator for synthetic test and monitoring. Works great with Prometheus.
-    firstDeployed: "2021-12-07T09:56:43Z"
+    firstDeployed: "2021-12-07T10:44:22Z"
     home: https://kuberhealthy.github.io/kuberhealthy/
     icon: https://raw.githubusercontent.com/kuberhealthy/kuberhealthy/master/images/logo-square.png
     keywords:
@@ -128,7 +128,7 @@
     - comcast
     - health
     - prometheus
-    lastDeployed: "2021-12-07T09:56:43Z"
+    lastDeployed: "2021-12-07T10:44:22Z"
     maintainers:
     - email: ericgreer@gmail.com
       name: integrii
@@ -144,7 +144,7 @@
     - https://github.com/kuberhealthy/kuberhealthy
     - https://github.com/kuberhealthy/kuberhealthy/tree/master/deploy/helm/kuberhealthy
     type: application
-    version: "77"
+    version: "69"
   - apiVersion: v2
     appVersion: 0.0.78
     description: Jenkins X next gen cloud CI / CD platform for Kubernetes
