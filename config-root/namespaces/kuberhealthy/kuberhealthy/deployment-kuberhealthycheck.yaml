@@ -17,7 +17,7 @@ spec:
       fsGroup: 999
     containers:
       - name: deployment
-        image: kuberhealthy/deployment-check:v1.8.1
+        image: kuberhealthy/deployment-check:v1.9.0
         imagePullPolicy: IfNotPresent
         env:
           - name: CHECK_DEPLOYMENT_REPLICAS
