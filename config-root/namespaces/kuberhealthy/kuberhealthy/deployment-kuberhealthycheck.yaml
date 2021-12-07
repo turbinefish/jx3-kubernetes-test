@@ -8,7 +8,6 @@ metadata:
     meta.helm.sh/release-name: 'kuberhealthy'
   labels:
     gitops.jenkins-x.io/pipeline: 'namespaces'
-    kuberhealthy-run-id: '124800ae-15ff-4cd4-9ebe-560d605a38a5'
 spec:
   runInterval: 10m
   timeout: 15m
@@ -27,8 +26,6 @@ spec:
             value: "true"
           - name: CHECK_SERVICE_ACCOUNT
             value: "default"
-          - name: KH-RUN-UUID
-            value: "124800ae-15ff-4cd4-9ebe-560d605a38a5"
         resources:
           requests:
             cpu: 25m
