@@ -17,7 +17,7 @@ spec:
       fsGroup: 999
     containers:
       - name: deployment
-        image: kuberhealthy/deployment-check:v1.9.0
+        image: kuberhealthy/deployment-check:v1.8.1
         imagePullPolicy: IfNotPresent
         env:
           - name: CHECK_DEPLOYMENT_REPLICAS
@@ -35,6 +35,6 @@ spec:
         securityContext:
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true
-    restartPolicy: Never
+        restartPolicy: Never
     serviceAccountName: deployment-sa
     terminationGracePeriodSeconds: 60
