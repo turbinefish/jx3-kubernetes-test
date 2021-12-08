@@ -52,17 +52,17 @@ spec:
       containers:
         - args:
             - -kubeconfig-writer-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter:v0.27.0@sha256:81074a7039daa1f2d579e74fdc0b41eeac0c1136bf6a487f67ff14240aaac378
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter:v0.28.0@sha256:12d08ecfb8bd5a635750909b2b1ea63454c97c77bef8aae7c0d6ea4308614c9d
             - -git-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.27.0@sha256:8bfb6edbd8ce4608af957a3a38444512c14713bc9fc0d60308f228c61be4c83f
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.28.0@sha256:39b53980b255ef8af80086ac702f5b113d32f60cc4c8876b096ba37fc5912c81
             - -entrypoint-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint:v0.27.0@sha256:b8a0bed8e402138f7b14b44115719f44460255497132b8a8233e710692ef6930
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint:v0.28.0@sha256:61013ff4268fbf1046d623d3eab2bcb072e776202d86cb95ad7238a8c45c5420
             - -nop-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop:v0.27.0@sha256:96c203f18b3eba750fcbf9c018ac1c97a68860053035524f3629ef7093a64d9c
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop:v0.28.0@sha256:81c38a3d11e9f82898ac34318436b7019c23a2e279c60cb721a72c6ecccad476
             - -imagedigest-exporter-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.27.0@sha256:32fa5aa9d17c0e999053e515264b70037168760fc835cbb513c6e92b3afc77bb
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.28.0@sha256:2aa8bc18e7d947c44b18be9b74241d508026c0d2b224577212cedb5a2347ad6f
             - -pr-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.27.0@sha256:fe7734cced1b9a2ce37dd78df5fc5998d29ac8bef8e8bd984c6b6a8bbb58e4f4
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.28.0@sha256:57ec58d70867231a1d84e1b5f7298c6751859cd3426546c3ea7d759dffa8d1b2
             - -gsutil-image
             - gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:27b2c22bf259d9bc1a291e99c63791ba0c27a04d2db0a43241ba0f1f20f4067f
             - -shell-image
