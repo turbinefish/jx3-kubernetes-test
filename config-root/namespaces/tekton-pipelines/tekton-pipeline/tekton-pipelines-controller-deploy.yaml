@@ -7,9 +7,9 @@ metadata:
     app.kubernetes.io/instance: default
     app.kubernetes.io/name: controller
     app.kubernetes.io/part-of: tekton-pipelines
-    app.kubernetes.io/version: v0.27.0
-    pipeline.tekton.dev/release: v0.27.0
-    version: v0.27.0
+    app.kubernetes.io/version: v0.26.0
+    pipeline.tekton.dev/release: v0.26.0
+    version: v0.26.0
     gitops.jenkins-x.io/pipeline: 'namespaces'
   name: tekton-pipelines-controller
   namespace: tekton-pipelines
@@ -27,6 +27,7 @@ spec:
   template:
     metadata:
       annotations:
+        cluster-autoscaler.kubernetes.io/safe-to-evict: "false"
         fake: value
         prometheus.io/port: "9090"
         prometheus.io/scrape: "true"
@@ -36,9 +37,9 @@ spec:
         app.kubernetes.io/instance: default
         app.kubernetes.io/name: controller
         app.kubernetes.io/part-of: tekton-pipelines
-        app.kubernetes.io/version: v0.27.0
-        pipeline.tekton.dev/release: v0.27.0
-        version: v0.27.0
+        app.kubernetes.io/version: v0.26.0
+        pipeline.tekton.dev/release: v0.26.0
+        version: v0.26.0
     spec:
       affinity:
         nodeAffinity:
@@ -51,18 +52,20 @@ spec:
                       - windows
       containers:
         - args:
+            - -version
+            - v0.26.0
             - -kubeconfig-writer-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter:v0.28.0@sha256:12d08ecfb8bd5a635750909b2b1ea63454c97c77bef8aae7c0d6ea4308614c9d
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/kubeconfigwriter:v0.26.0@sha256:a4471a7ef4bdec4b4f4d08c20df0b762140142701c1197e1f57eca10b741db3a
             - -git-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.28.0@sha256:39b53980b255ef8af80086ac702f5b113d32f60cc4c8876b096ba37fc5912c81
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.26.0@sha256:8a5ed01f5a0684a90a2f42d247a10a2274f974759562329b200abaed4a804508
             - -entrypoint-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint:v0.28.0@sha256:61013ff4268fbf1046d623d3eab2bcb072e776202d86cb95ad7238a8c45c5420
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/entrypoint:v0.26.0@sha256:6a99fea33bb3dd1c20a16837cd88af0a120ba699c3f3e18ea9338fba78387556
             - -nop-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop:v0.28.0@sha256:81c38a3d11e9f82898ac34318436b7019c23a2e279c60cb721a72c6ecccad476
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/nop:v0.26.0@sha256:8c6a241f71b54c39c001c94128013e6abd8693c64aa1231f1d19b2e50f57d3af
             - -imagedigest-exporter-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.28.0@sha256:2aa8bc18e7d947c44b18be9b74241d508026c0d2b224577212cedb5a2347ad6f
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/imagedigestexporter:v0.26.0@sha256:92a090944f89a679bb3632ae1b8c8afa30ef5a9eb7d4a3bdbca6f13967db8d3d
             - -pr-image
-            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.28.0@sha256:57ec58d70867231a1d84e1b5f7298c6751859cd3426546c3ea7d759dffa8d1b2
+            - gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/pullrequest-init:v0.26.0@sha256:1ab4207300c431f2098e6f6cbdb3fd6c8058900bbf06b398f159668419903b68
             - -gsutil-image
             - gcr.io/google.com/cloudsdktool/cloud-sdk@sha256:27b2c22bf259d9bc1a291e99c63791ba0c27a04d2db0a43241ba0f1f20f4067f
             - -shell-image
@@ -102,7 +105,7 @@ spec:
             - secretRef:
                 name: 'jx-boot-job-env-vars'
                 optional: true
-          image: ghcr.io/jenkins-x/controller-10a3e32792f33651396d02b6855a6e36:latest
+          image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/controller:v0.26.0@sha256:db1d486fac10b1eca6d7b8daf4764a15f8c70e67961457c73d8c04964a3e4929
           livenessProbe:
             httpGet:
               path: /health
