@@ -11,7 +11,7 @@ spec:
       taskSpec:
         metadata: {}
         stepTemplate:
-          image: uses:jenkins-x/jx3-pipeline-catalog/tasks/environment/pullrequest.yaml@versionStream
+          image: uses:turbinefish/jx3-pipeline-catalog/tasks/environment/pullrequest.yaml@versionStream
           name: ""
           resources:
             requests:
