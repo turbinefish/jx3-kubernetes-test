@@ -22,7 +22,7 @@ spec:
               memory: 512Mi
           workingDir: /workspace/source
         steps:
-        - image: uses:jenkins-x/jx3-pipeline-catalog/tasks/git-clone/git-clone-env-pr.yaml@versionStream
+        - image: uses:turbinefish/jx3-pipeline-catalog/tasks/git-clone/git-clone-env-pr.yaml@versionStream
           resources: {}
         - name: make-pr
           resources: {}
