@@ -20,7 +20,7 @@ spec:
     metadata:
       labels:
         app: lighthouse-tekton-controller
-      annotations: {jenkins-x.io/hash: '02c3759846ec3ebb51b944c65a88828d41e624e7b44c98fa699c1512aba2161b'}
+      annotations: {jenkins-x.io/hash: 'bb779b7171b75c50938fc1eae2af3292143d15aab350599ac284da4c9bc941e9'}
     spec:
       serviceAccountName: lighthouse-tekton-controller
       containers:
@@ -54,7 +54,7 @@ spec:
             - name: LIGHTHOUSE_DASHBOARD_TEMPLATE
               value: "namespaces/{{ .Namespace }}/pipelineruns/{{ .PipelineRun }}"
             - name: LIGHTHOUSE_VERSIONSTREAM_JENKINS_X_JX3_PIPELINE_CATALOG
-              value: "fcbaf6da601b13a65455199006e9964c46d37874"
+              value: "5a20a5a6fd4c4b4a658ca112fed143aa649a5a6c"
           envFrom:
             - secretRef:
                 name: jx-boot-job-env-vars
