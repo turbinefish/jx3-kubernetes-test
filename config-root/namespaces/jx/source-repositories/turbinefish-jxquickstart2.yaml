@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: turbinefish
+    provider: github
+    repository: jxquickstart2
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: turbinefish-jxquickstart2
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/turbinefish/jxquickstart2.git
+  org: turbinefish
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jxquickstart2
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/turbinefish/jxquickstart2

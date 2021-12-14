@@ -9,6 +9,7 @@ data:
       enabled:
         turbinefish/jx3-kubernetes-test: true
         turbinefish/jxquickstart: true
+        turbinefish/jxquickstart2: true
     plank: {}
     pod_namespace: jx
     prowjob_namespace: jx
@@ -22,6 +23,7 @@ data:
       merge_method:
         turbinefish/jx3-kubernetes-test: merge
         turbinefish/jxquickstart: merge
+        turbinefish/jxquickstart2: merge
       queries:
       - labels:
         - approved
@@ -34,6 +36,7 @@ data:
         repos:
         - turbinefish/jx3-kubernetes-test
         - turbinefish/jxquickstart
+        - turbinefish/jxquickstart2
       - labels:
         - updatebot
         missingLabels:
@@ -45,6 +48,7 @@ data:
         repos:
         - turbinefish/jx3-kubernetes-test
         - turbinefish/jxquickstart
+        - turbinefish/jxquickstart2
       target_url: http://lighthouse-jx./merge/status
 kind: ConfigMap
 metadata:
