@@ -1,0 +1,10 @@
+# Source: jxquickstart/templates/sa.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: jxquickstart-jxquickstart
+  annotations:
+    meta.helm.sh/release-name: 'jxquickstart'
+  namespace: jx-staging
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'

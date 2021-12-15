@@ -13,5 +13,10 @@ releases:
   name: jxquickstart
   values:
   - jx-values.yaml
+- chart: dev/jxquickstart2
+  version: 0.0.1
+  name: jxquickstart2
+  values:
+  - jx-values.yaml
 templates: {}
 renderedvalues: {}
