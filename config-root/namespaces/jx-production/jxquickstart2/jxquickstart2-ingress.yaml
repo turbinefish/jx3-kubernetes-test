@@ -1,0 +1,22 @@
+# Source: jxquickstart2/templates/ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    meta.helm.sh/release-name: 'jxquickstart2'
+  name: jxquickstart2
+  namespace: jx-production
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+spec:
+  rules:
+    - http:
+        paths:
+          - pathType: ImplementationSpecific
+            backend:
+              service:
+                name: jxquickstart2
+                port:
+                  number: 80
+      host: jxquickstart2-jx-production.change.me
